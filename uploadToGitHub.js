@@ -62,3 +62,7 @@ async function uploadToGitHub(filePath, uploadPath, username, repoName, branch =
 }
 
 module.exports = uploadToGitHub;
+
+const duration = parseInt(document.getElementById('duration').value);
+// ...
+formData.append('duration', duration);
