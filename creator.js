@@ -28,3 +28,8 @@ async function uploadVideo() {
     alert("🌀 Upload failed.");
   }
 }
+<!-- GitHub Repo Input -->
+<div class="section">
+  <h2>GitHub Repository</h2>
+  <input type="text" id="repoUrl" placeholder="https://github.com/yourname/yourrepo" />
+</div>
