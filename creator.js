@@ -57,3 +57,18 @@ async function uploadVideo() {
   const json = await res.json();
   alert(json.success ? "🎉 Uploaded!" : "❌ Failed!");
   }
+const durationInput = document.getElementById('duration');
+const earningPreview = document.getElementById('earningPreview');
+
+durationInput.addEventListener('input', () => {
+  const duration = parseInt(durationInput.value);
+  const baseAmount = 100; // Assume Rs.100 fixed revenue per video (for demo)
+
+  let cut = 0;
+  if (duration <= 30) cut = 0.05;
+  else if (duration <= 60) cut = 0.09;
+  else cut = 0.15;
+
+  const creatorEarning = Math.round(baseAmount * (1 - cut));
+  earningPreview.textContent = `💰 Creator earns: ₹${creatorEarning} (Platform cut: ₹${Math.round(baseAmount * cut)})`;
+});
