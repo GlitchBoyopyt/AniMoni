@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>AniMoni Viewer</title>
+  <link rel="stylesheet" href="viewer.css" />
+</head>
+<body class="light-mode">
+  <div class="viewer-container">
+    <h1>🍿 AniMoni Viewer</h1>
+
+    <!-- Theme Toggle -->
+    <label>
+      <input type="checkbox" id="themeToggle" /> Dark Mode
+    </label>
+
+    <!-- Repository Input -->
+    <input type="text" id="repoUrl" placeholder="Enter Creator Repo URL (https://github.com/creator/repo)" />
+    <button onclick="loadVideos()">Load Videos</button>
+
+    <!-- Video List -->
+    <div id="videoList"></div>
+  </div>
+
+  <script src="viewer.js"></script>
+</body>
+</html>
