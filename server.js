@@ -45,3 +45,12 @@ app.post('/upload', upload.single('video'), async (req, res) => {
     res.json({ success: false, error: err.message });
   }
 });
+const duration = parseInt(req.body.duration);
+let platformCut = 0;
+if (duration <= 30) platformCut = 0.05;
+else if (duration <= 60) platformCut = 0.09;
+else platformCut = 0.15;
+
+const creatorEarn = Math.round(100 * (1 - platformCut));
+console.log(`Creator earns ₹${creatorEarn}, Platform gets ₹${100 * platformCut}`);
+
